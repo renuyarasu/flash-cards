@@ -14,6 +14,19 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <style>
+      #card {
+        width: 100%;
+        background-color: #fafafa;
+        border: 1px solid gray;
+        border-radius: 10px;
+        height: 300px;
+      }
+      .vcenter-item {
+        display: flex;
+        align-items: center;
+      }
+    </style>
     <title>Flash Cards</title>
   </head>
   <body>
@@ -21,22 +34,21 @@
       <div class="row"><h1>Flash Cards</h1></div>
       <div class="row">
         <div class="col">
-          <form>
-            <label for="front">Front of Card</label>
-            <textarea id="front" class="form-control" rows="3"></textarea>
-            <label for="back">Back of Card</label>
-            <textarea id="back" class="form-control" rows="3"></textarea>
-            <button
-              type="button"
-              class="btn btn-primary btn-lg btn-block mt-3"
-              id="btnSave"
-            >
-              Save Card
-            </button>
-          </form>
+          <div id="card" class="p-3 d-flex justify-content-center">
+            <h3 id="frontCard"></h3>
+            <h3 id="backCard"></h3>
+          </div>
+          <p>Card # <output id="cardNum"></output></p>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg btn-block mt-3"
+            id="btnFlip"
+          >
+            Flip Card
+          </button>
         </div>
         <div class="col">
-          <h2>Make A Flash Card</h2>
+          <h2>Review your Cards</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nisi
             consequuntur modi non voluptate esse quis recusandae et deleniti
@@ -46,9 +58,9 @@
         </div>
       </div>
     </div>
- 
+
+    <script src="localforage/dist/localforage.js"></script>
     <script src="flashcards.js"></script>
-    <script src="localforage.min.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
